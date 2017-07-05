@@ -13,10 +13,10 @@ module.exports = {
     },
 
     app_auth(req, res) {
-        var client_id = 0000000;
-        var redirect_uri = 'http://goodhost.online/success';
+        var client_id = 6081626;
+        var redirect_uri = 'https://oauth.vk.com/blank.html';
         var scope = 'wall,offline,groups';
         var url = 'https://oauth.vk.com/authorize?client_id=' + client_id + '&scope=' + scope +'&redirect_uri=' + redirect_uri + '&display=page&response_type=token';
-        return res.redirect(url);
+        res.redirect(url);
     }
 };
