@@ -5,15 +5,23 @@ module.exports = {
     post_del(post_id, owner_id, access_token) {
         var url = 'https://api.vk.com/method/wall.delete?post_id=' + post_id + '&owner_id=' + owner_id + '&access_token=' + access_token;
         setTimeout(function () {
-            request(url)
-        }, 5000);
+            request(url, function (error, response, body) {
+                console.log('error:', error);
+                console.log('statusCode:', response && response.statusCode);
+                console.log('body:', body);
+            });
+        }, 10000);
     },
 
     post_publish(post_id, owner_id, access_token, signed) {
         var url = 'https://api.vk.com/method/wall.post?post_id=' + post_id + '&owner_id=' + owner_id + '&access_token=' + access_token + '&signed=' + signed;
         setTimeout(function () {
-            request(url)
-        }, 5000);
+            request(url, function (error, response, body) {
+                console.log('error:', error);
+                console.log('statusCode:', response && response.statusCode);
+                console.log('body:', body);
+            });
+        }, 10000);
     },
 
     app_auth(req, res) {
